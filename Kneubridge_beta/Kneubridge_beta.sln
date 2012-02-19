@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kneubridge_beta", "Kneubridge_beta\Kneubridge_beta\Kneubridge_beta.csproj", "{DA79E80B-6435-49BF-A925-5BF106AF098A}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Kneubridge_betaContent", "Kneubridge_beta\Kneubridge_betaContent\Kneubridge_betaContent.contentproj", "{C8469EEF-063B-4864-9D8D-814BE78BAA81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kneubridge_betaContent", "Kneubridge_beta\Kneubridge_betaContent\Kneubridge_betaContent.contentproj", "{C8469EEF-063B-4864-9D8D-814BE78BAA81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinect_Sandbox", "Kinect_Sandbox\Kinect_Sandbox\Kinect_Sandbox.csproj", "{19F9AE81-659C-47C0-BD03-64808B4EEA2C}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Kinect_SandboxContent", "Kinect_Sandbox\Kinect_SandboxContent\Kinect_SandboxContent.contentproj", "{15DA4D9E-EE3F-4CC8-BCCE-480D48A7D26C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroSky_Sandbox", "NeuroSky_Sandbox\NeuroSky_Sandbox.csproj", "{E6775A64-A473-45F9-8AE9-4B2253E4F164}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +23,16 @@ Global
 		{DA79E80B-6435-49BF-A925-5BF106AF098A}.Release|x86.Build.0 = Release|x86
 		{C8469EEF-063B-4864-9D8D-814BE78BAA81}.Debug|x86.ActiveCfg = Debug|x86
 		{C8469EEF-063B-4864-9D8D-814BE78BAA81}.Release|x86.ActiveCfg = Release|x86
+		{19F9AE81-659C-47C0-BD03-64808B4EEA2C}.Debug|x86.ActiveCfg = Debug|x86
+		{19F9AE81-659C-47C0-BD03-64808B4EEA2C}.Debug|x86.Build.0 = Debug|x86
+		{19F9AE81-659C-47C0-BD03-64808B4EEA2C}.Release|x86.ActiveCfg = Release|x86
+		{19F9AE81-659C-47C0-BD03-64808B4EEA2C}.Release|x86.Build.0 = Release|x86
+		{15DA4D9E-EE3F-4CC8-BCCE-480D48A7D26C}.Debug|x86.ActiveCfg = Debug|x86
+		{15DA4D9E-EE3F-4CC8-BCCE-480D48A7D26C}.Release|x86.ActiveCfg = Release|x86
+		{E6775A64-A473-45F9-8AE9-4B2253E4F164}.Debug|x86.ActiveCfg = Debug|x86
+		{E6775A64-A473-45F9-8AE9-4B2253E4F164}.Debug|x86.Build.0 = Debug|x86
+		{E6775A64-A473-45F9-8AE9-4B2253E4F164}.Release|x86.ActiveCfg = Release|x86
+		{E6775A64-A473-45F9-8AE9-4B2253E4F164}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
