@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace Kneubridge_beta
+namespace Kinect_Sandbox
 {
     /// <summary>
     /// This is the main type for your game

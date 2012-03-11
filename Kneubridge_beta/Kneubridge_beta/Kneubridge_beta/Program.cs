@@ -10,7 +10,7 @@ namespace Kneubridge_beta
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (KinectGame game = new KinectGame())
             {
                 game.Run();
             }
