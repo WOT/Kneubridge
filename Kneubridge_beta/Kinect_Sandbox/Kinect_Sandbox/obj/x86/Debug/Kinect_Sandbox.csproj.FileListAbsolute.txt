@@ -1,0 +1,6 @@
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kinect_Sandbox\Kinect_Sandbox\bin\x86\Debug\Kinect_Sandbox.exe
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kinect_Sandbox\Kinect_Sandbox\bin\x86\Debug\Kinect_Sandbox.pdb
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kinect_Sandbox\Kinect_Sandbox\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kinect_Sandbox\Kinect_Sandbox\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kinect_Sandbox\Kinect_Sandbox\obj\x86\Debug\Kinect_Sandbox.exe
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kinect_Sandbox\Kinect_Sandbox\obj\x86\Debug\Kinect_Sandbox.pdb

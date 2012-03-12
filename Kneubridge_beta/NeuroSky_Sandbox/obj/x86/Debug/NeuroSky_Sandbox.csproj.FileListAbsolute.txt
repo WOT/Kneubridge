@@ -1,0 +1,5 @@
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\NeuroSky_Sandbox\bin\Debug\NeuroSky_Sandbox.exe
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\NeuroSky_Sandbox\bin\Debug\NeuroSky_Sandbox.pdb
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\NeuroSky_Sandbox\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\NeuroSky_Sandbox\obj\x86\Debug\NeuroSky_Sandbox.exe
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\NeuroSky_Sandbox\obj\x86\Debug\NeuroSky_Sandbox.pdb

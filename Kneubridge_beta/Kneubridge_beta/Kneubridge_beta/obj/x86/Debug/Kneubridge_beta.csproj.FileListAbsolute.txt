@@ -1,0 +1,6 @@
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kneubridge_beta\Kneubridge_beta\bin\x86\Debug\Kneubridge_beta.exe
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kneubridge_beta\Kneubridge_beta\bin\x86\Debug\Kneubridge_beta.pdb
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kneubridge_beta\Kneubridge_beta\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kneubridge_beta\Kneubridge_beta\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kneubridge_beta\Kneubridge_beta\obj\x86\Debug\Kneubridge_beta.exe
+C:\Users\jdzurek\GitHub\Kneubridge\Kneubridge_beta\Kneubridge_beta\Kneubridge_beta\obj\x86\Debug\Kneubridge_beta.pdb
