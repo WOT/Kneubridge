@@ -1,5 +1,4 @@
 using System;
-using Kneubridge_beta;
 
 namespace Kinect_Sandbox
 {

@@ -8,9 +8,9 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using Microsoft.Kinect;
 
-namespace Kneubridge_beta
+
+namespace Kinect_Sandbox
 {
     /// <summary>
     /// This is the main type for your game
@@ -19,18 +19,12 @@ namespace Kneubridge_beta
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        KinectSensor _kinectSensor;
-        Texture2D _kinectRGBVideo;
-        String _connectedStatus = "Not connected";
-
         
+
         public KinectGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
-            graphics.PreferredBackBufferWidth = 640;
-            graphics.PreferredBackBufferHeight = 480;
         }
 
         /// <summary>
@@ -41,26 +35,8 @@ namespace Kneubridge_beta
         /// </summary>
         protected override void Initialize()
         {
-            //This event handler allows you to run code once the status changes on any of the connected devices. 
-            //This listens to the statuschanged event on the kinect sensor making it possible to check the statuses
-            //of all connected kinects.
-            KinectSensor.KinectSensors.StatusChanged += new EventHandler<StatusChangedEventArgs>(KinectSensors_StatusChanged);
-            DiscoverKinectSensor();
-            
+            // TODO: Add your initialization logic here
             base.Initialize();
-        }
-
-        void KinectSensors_StatusChanged(object sender, StatusChangedEventArgs e)
-        {
-            if (this._kinectSensor == e.Sensor)
-            {
-                if (e.Status == KinectStatus.Disconnected ||
-                    e.Status == KinectStatus.NotPowered)
-                {
-                    this._kinectSensor = null;
-                    this.DiscoverKinectSensor();
-                }
-            }
         }
 
         /// <summary>
@@ -72,8 +48,7 @@ namespace Kneubridge_beta
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //Load game content
-            _kinectRGBVideo = new Texture2D(GraphicsDevice, 1337, 1337);
+            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -82,8 +57,7 @@ namespace Kneubridge_beta
         /// </summary>
         protected override void UnloadContent()
         {
-            _kinectSensor.Stop();
-            _kinectSensor.Dispose();
+            // TODO: Unload any non ContentManager content here
         }
 
         /// <summary>
@@ -110,128 +84,9 @@ namespace Kneubridge_beta
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            //Kinect drawing code
-            spriteBatch.Begin();
-            spriteBatch.Draw(_kinectRGBVideo, new Rectangle(0, 0, 640, 480), Color.White);
-            spriteBatch.End();
+            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }
-
-        /// <summary>
-        /// Iterates through all connected Kinect devices and when a device is found set the global kinectSensor
-        /// instance, update the status message and initialize it once connected.
-        /// </summary>
-        private void DiscoverKinectSensor()
-        {
-            foreach (KinectSensor sensor in KinectSensor.KinectSensors)
-            {
-                if (sensor.Status == KinectStatus.Connected)
-                {
-                    // Found one, set our sensor to this
-                    _kinectSensor = sensor;
-                    break;
-                }
-            }
-
-            if (this._kinectSensor == null)
-            {
-                _connectedStatus = "Found none Kinect Sensors connected to USB";
-                return;
-            }
-
-            // You can use the kinectSensor.Status to check for status
-            // and give the user some kind of feedback
-            switch (_kinectSensor.Status)
-            {
-                case KinectStatus.Connected:
-                    {
-                        _connectedStatus = "Status: Connected";
-                        break;
-                    }
-                case KinectStatus.Disconnected:
-                    {
-                        _connectedStatus = "Status: Disconnected";
-                        break;
-                    }
-                case KinectStatus.NotPowered:
-                    {
-                        _connectedStatus = "Status: Connect the power";
-                        break;
-                    }
-                default:
-                    {
-                        _connectedStatus = "Status: Error";
-                        break;
-                    }
-            }
-
-            // Init the found and connected device
-            if (_kinectSensor.Status == KinectStatus.Connected)
-            {
-                InitializeKinect();
-            }
-        }
-
-        /// <summary>
-        /// Enables RGB Camera in the Kinect Sensor for use.
-        /// Initializes Kinect object to get the needed streams. Configure and enable ColorStream to notify us when a new image
-        /// is ready from the Kinect RGB camera. Once notification is recieved we can start the device.
-        /// </summary>
-        /// <returns>Success status - boolean</returns>
-        private bool InitializeKinect()
-        {
-            _kinectSensor.ColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30);
-            _kinectSensor.ColorFrameReady += new EventHandler<ColorImageFrameReadyEventArgs>(kinectSensor_ColorFrameReady);
-              
-            try
-            {
-                _kinectSensor.Start();
-            }
-            catch
-            {
-                _connectedStatus = "Unable to start the Kinect Sensor";
-                return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// Captures the image from the Kinect sensor, creates a Color array, fills it with the data from the captures image for 
-        /// each pixel, and then stores it in a Texture2d object.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void kinectSensor_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
-        {
-            using (ColorImageFrame colorImageFrame = e.OpenColorImageFrame())
-            {
-                if (colorImageFrame != null)
-                {
-
-                    byte[] pixelsFromFrame = new byte[colorImageFrame.PixelDataLength];
-
-                    colorImageFrame.CopyPixelDataTo(pixelsFromFrame);
-
-                    Color[] color = new Color[colorImageFrame.Height * colorImageFrame.Width];
-                   _kinectRGBVideo = new Texture2D(graphics.GraphicsDevice, colorImageFrame.Width, colorImageFrame.Height);
-
-                    // Go through each pixel and set the bytes correctly.
-                    // Remember, each pixel got a Rad, Green and Blue channel.
-                    int index = 0;
-                    for (int y = 0; y < colorImageFrame.Height; y++)
-                    {
-                        for (int x = 0; x < colorImageFrame.Width; x++, index += 4)
-                        {
-                            color[y * colorImageFrame.Width + x] = new Color(pixelsFromFrame[index + 2], pixelsFromFrame[index + 1], pixelsFromFrame[index + 0]);
-                        }
-                    }
-
-                    // Set pixeldata from the ColorImageFrame to a Texture2D
-                    _kinectRGBVideo.SetData(color);
-                }
-            }
-        }
-
     }
 }
